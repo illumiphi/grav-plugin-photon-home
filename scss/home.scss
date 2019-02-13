@@ -1,0 +1,19 @@
+/* photon ✴ home Components and Templates */
+
+// set defaults from simplest to most complex
+
+@import '../../photon/scss/_articles/__mixins/_mixins';
+
+@import '../../photon/scss/_media/var-18em';
+@import '../../photon/scss/_media/functions';
+@import '../../photon/scss/_media/mixins';
+
+
+/* articles/home *****************************/
+@import 'articles/home';
+/* sections/home *****************************/
+@import 'sections/featured';
+/* sections/home *****************************/
+@import 'sections/showcase';
+/* templates/home *****************************/
+@import 'templates/home';
