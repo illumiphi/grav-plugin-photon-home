@@ -32,6 +32,7 @@
   object-position: center;
 }
 .featured > article > header {
+  padding: var(--fitz);
   text-align: left;
   display: block;
 }
@@ -169,6 +170,7 @@ body.home > main > .collection {
       object-position: center;
     }
     body.home > main > .collection > .excerpt > header {
+      padding: var(--fitz);
       text-align: left;
       display: block;
     }
