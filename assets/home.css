@@ -64,7 +64,7 @@
 .featured > article > footer > aside {
   padding: 0;
 }
-.featured > article > footer > aside > h1 {
+.featured > article > footer > aside > h1, .featured > article > footer > aside h2 {
   display: none;
 }
 .featured > article > footer > nav {
@@ -202,7 +202,7 @@ body.home > main > .collection {
     body.home > main > .collection > .excerpt > footer > aside {
       padding: 0;
     }
-    body.home > main > .collection > .excerpt > footer > aside > h1 {
+    body.home > main > .collection > .excerpt > footer > aside > h1, body.home > main > .collection > .excerpt > footer > aside h2 {
       display: none;
     }
     body.home > main > .collection > .excerpt > footer > nav {
