@@ -2,11 +2,8 @@
 
 // set defaults from simplest to most complex
 
-@import '../../../themes/photon/scss/_articles/__mixins/_mixins';
-
-@import '../../../themes/photon/scss/_media/var-18em';
-@import '../../../themes/photon/scss/_media/functions';
-@import '../../../themes/photon/scss/_media/mixins';
+@import '../../../themes/photon/scss/articles/mixins';
+@import '../../../themes/photon/scss/media';
 
 
 /* articles/home *****************************/

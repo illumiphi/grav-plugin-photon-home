@@ -8,8 +8,7 @@ body.home {
   > .showcase {
     // @extend %body-section-default;
     margin: var(--fitz);
-
-    padding: 0; //each article has padding
+    padding: var(--fitz);
 
     // set to height of the screen - header and margins
     min-height: calc(100vh - var(--header-height) - (var(--fitz-2) * 3));
@@ -18,19 +17,16 @@ body.home {
   > .welcome {
     // @extend %body-section-default;
     margin: var(--fitz);
-
   }
 
   > .featured {
     // @extend %body-section-default;
     // margin: var(--fitz);
-
   }
 
   > main {
     > .collection {
-      color: var(--color-2-light);
-
+      // color: var(--color-2-light);
     }
   }
 

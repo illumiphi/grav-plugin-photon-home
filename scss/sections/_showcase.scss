@@ -1,10 +1,6 @@
 .showcase {
-
-  // @extend %section-default;
-
   position: relative;
   display: block;
-
 
   > article {
     //pin to showcase boundary
@@ -13,22 +9,14 @@
     bottom: 0;
     right: 0;
     left: 0;
-
     opacity: 0;
-
-    // cursor: pointer;
-
-    // display: flex;
-    // flex-flow: column;
     transition: opacity .5s;
-
 
     &.show {
       opacity: 1;
     }
 
     > figure {
-
       > figcaption {
         display: none;
       }
@@ -47,7 +35,5 @@
         display:none;
       }
     }
-
   }
-
 }

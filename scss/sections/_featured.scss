@@ -1,12 +1,9 @@
 .featured {
-
-  // @extend %section-default;
-
   padding:0;
   margin:0;
 
-  display: grid;
-  grid-template-columns: repeat( auto-fit, minmax( var(--col), 1fr ) );
+  // display: grid;
+  // grid-template-columns: repeat( auto-fit, minmax( var(--col), 1fr ) );
 
   overflow: auto;
 
@@ -14,10 +11,9 @@
     margin: var(--fitz);
     padding: var(--fitz);
   }
+
   > h1 {
     grid-column: 1 / -1;
-
-    // padding-top: var(--fitz-2);
 
     letter-spacing: .25em;
     padding-left: .25em;
@@ -26,8 +22,6 @@
   }
 
   > article {
-
     @include article-banner;
-
   }
 }
