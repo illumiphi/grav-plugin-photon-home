@@ -14,14 +14,12 @@ body.home {
     min-height: calc(100vh - var(--header-height) - (var(--fitz-2) * 3));
   }
 
-  > .welcome {
-    // @extend %body-section-default;
-    margin: var(--fitz);
-  }
 
   > .featured {
     // @extend %body-section-default;
     // margin: var(--fitz);
+    margin: var(--fitz);
+    padding: var(--fitz);
   }
 
   > main {
@@ -30,49 +28,36 @@ body.home {
     }
   }
 
-  @include media-bp(1) {
-  }
+  @media (orientation: landscape) {
+    display: grid;
+    grid-template-areas:
+      "  header   showcase "
+      "  asides   featured "
+      "  asides   main   "
+      "  asides   footer   ";
+    grid-template-rows:  calc(100vh - var(--fitz-2)) ;
 
-  @include media-bp(2) {
-  }
+    > .showcase {
+      grid-area: showcase;
 
-  @include media-bp(3) {
-
-    @supports (display: grid) {
-
-      display: grid;
-      grid-template-areas:
-        "  header   showcase "
-        "  asides   featured "
-        "  asides   welcome "
-        "  asides   main   "
-        "  asides   footer   ";
-      grid-template-rows:  calc(100vh - var(--fitz-2)) ;
-
-      > .showcase {
-        grid-area: showcase;
-
-        height: calc(100vh - 2em);
-      }
-
-      > .featured {
-        grid-area: featured;
-      }
-
+      height: calc(100vh - 2em);
     }
+
+    > .featured {
+      grid-area: featured;
+    }
+
   }
-  @include media-bp(4) {
 
-    @supports (display: grid) {
-
+  @media (min-width: 72em) {
+    @media (orientation: landscape) {
       display: grid;
       grid-template-areas:
-        "  header   showcase featured"
-        "  asides   welcome welcome"
-        "  asides   main   main"
-        "  asides   footer   footer";
+        "  header   showcase asides"
+        "  footer   featured asides"
+        "  footer   main   asides";
       grid-template-rows:  calc(100vh - var(--fitz-2)) ;
-      grid-template-columns: var(--col)   2fr 1fr;
+      grid-template-columns: var(--col) 1fr var(--col);
 
       > main {
         flex-flow: column;
@@ -97,13 +82,8 @@ body.home {
       }
 
       > .featured {
-        flex-flow: column;
+        // flex-flow: column;
       }
     }
-  }
-
-  @include media-bp(5) {
-  }
-  @include media-bp(6) {
   }
 }

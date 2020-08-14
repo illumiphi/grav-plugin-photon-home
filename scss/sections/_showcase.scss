@@ -1,14 +1,18 @@
 .showcase {
-  position: relative;
-  display: block;
+  // position: relative;
+  display: grid;
+  grid-template-rows: " auto 1fr auto ";
+  grid-template-areas:
+      " showcase_header "
+      " showcase_article "
+      " showcase_footer ";
+  
+  > header {
+    grid-area: showcase_header;
+  }
 
   > article {
-    //pin to showcase boundary
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
+    grid-area: showcase_article;
     opacity: 0;
     transition: opacity .5s;
 
@@ -25,9 +29,6 @@
     > header {
     }
 
-    > main {
-    }
-
     > footer {
       .article-share,
       .article-tags,
@@ -35,5 +36,9 @@
         display:none;
       }
     }
+  }
+
+  > footer {
+    grid-area: showcase_footer;
   }
 }

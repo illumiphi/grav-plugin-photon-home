@@ -69,28 +69,18 @@ article.home {
 .featured > article > footer > nav {
   padding: 0;
 }
-@media (min-width: 72em) {
-  @supports (display: grid) {
-    .featured > article {
-      display: grid;
-      grid-template-areas: " figure header " " figure content " " figure footer";
-      grid-template-columns: calc(var(--col) / 2) 1fr;
-      grid-template-rows: auto 1fr auto;
-    }
-  }
-}
 
 /* sections/home *****************************/
 .showcase {
-  position: relative;
-  display: block;
+  display: grid;
+  grid-template-rows: " auto 1fr auto ";
+  grid-template-areas: " showcase_header " " showcase_article " " showcase_footer ";
+}
+.showcase > header {
+  grid-area: showcase_header;
 }
 .showcase > article {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
+  grid-area: showcase_article;
   opacity: 0;
   transition: opacity 0.5s;
 }
@@ -105,6 +95,9 @@ article.home {
 .showcase > article > footer .sibling {
   display: none;
 }
+.showcase > footer {
+  grid-area: showcase_footer;
+}
 
 /* templates/home *****************************/
 body.home > .showcase {
@@ -112,106 +105,90 @@ body.home > .showcase {
   padding: var(--fitz);
   min-height: calc(100vh - var(--header-height) - (var(--fitz-2) * 3));
 }
-body.home > .welcome {
+body.home > .featured {
   margin: var(--fitz);
+  padding: var(--fitz);
 }
-@media (min-width: 96em) {
-  @supports (display: grid) {
-    body.home {
-      display: grid;
-      grid-template-areas: "  header   showcase " "  asides   featured " "  asides   welcome " "  asides   main   " "  asides   footer   ";
-      grid-template-rows: calc(100vh - var(--fitz-2));
-    }
-    body.home > .showcase {
-      grid-area: showcase;
-      height: calc(100vh - 2em);
-    }
-    body.home > .featured {
-      grid-area: featured;
-    }
+@media (orientation: landscape) {
+  body.home {
+    display: grid;
+    grid-template-areas: "  header   showcase " "  asides   featured " "  asides   main   " "  asides   footer   ";
+    grid-template-rows: calc(100vh - var(--fitz-2));
+  }
+  body.home > .showcase {
+    grid-area: showcase;
+    height: calc(100vh - 2em);
+  }
+  body.home > .featured {
+    grid-area: featured;
   }
 }
-@media (min-width: 120em) {
-  @supports (display: grid) {
-    body.home {
-      display: grid;
-      grid-template-areas: "  header   showcase featured" "  asides   welcome welcome" "  asides   main   main" "  asides   footer   footer";
-      grid-template-rows: calc(100vh - var(--fitz-2));
-      grid-template-columns: var(--col) 2fr 1fr;
-    }
-    body.home > main {
-      flex-flow: column;
-    }
-    body.home > main > article {
-      padding-bottom: 1em;
-    }
-    body.home > main > .collection {
-      width: 100%;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(36em, 1fr));
-    }
-    body.home > main > .collection > h1 {
-      grid-column: 1/-1;
-    }
-    body.home > main > .collection > .excerpt {
-      /* article-banner */
-    }
-    body.home > main > .collection > .excerpt > figure {
-      max-height: 9em;
-      padding: var(--fitz);
-    }
-    body.home > main > .collection > .excerpt > figure > img {
-      height: 100%;
-      object-position: center;
-    }
-    body.home > main > .collection > .excerpt > header {
-      padding: var(--fitz);
-      text-align: left;
-      display: block;
-    }
-    body.home > main > .collection > .excerpt > header > * {
-      text-align: left;
-      margin-left: 0;
-    }
-    body.home > main > .collection > .excerpt > .content {
-      text-align: left;
-      margin: 0;
-    }
-    body.home > main > .collection > .excerpt > .content .summary {
-      text-align: left;
-    }
-    body.home > main > .collection > .excerpt > .content .summary > ul {
-      list-style: disc;
-      text-align: left;
-      margin: 0;
-      margin-left: 1em;
-      padding: 0;
-    }
-    body.home > main > .collection > .excerpt > .content .summary > ul li::after {
-      display: none;
-    }
-    body.home > main > .collection > .excerpt > footer > aside {
-      padding: 0;
-    }
-    body.home > main > .collection > .excerpt > footer > aside > h1, body.home > main > .collection > .excerpt > footer > aside h2 {
-      display: none;
-    }
-    body.home > main > .collection > .excerpt > footer > nav {
-      padding: 0;
-    }
-    @media (min-width: 120em) and (min-width: 72em) {
-      @supports (display: grid) {
-        body.home > main > .collection > .excerpt {
-          display: grid;
-          grid-template-areas: " figure header " " figure content " " figure footer";
-          grid-template-columns: calc(var(--col) / 2) 1fr;
-          grid-template-rows: auto 1fr auto;
-        }
-      }
-    }
-    body.home > .featured {
-      flex-flow: column;
-    }
+@media (min-width: 72em) and (orientation: landscape) {
+  body.home {
+    display: grid;
+    grid-template-areas: "  header   showcase asides" "  footer   featured asides" "  footer   main   asides";
+    grid-template-rows: calc(100vh - var(--fitz-2));
+    grid-template-columns: var(--col) 1fr var(--col);
+  }
+  body.home > main {
+    flex-flow: column;
+  }
+  body.home > main > article {
+    padding-bottom: 1em;
+  }
+  body.home > main > .collection {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(36em, 1fr));
+  }
+  body.home > main > .collection > h1 {
+    grid-column: 1/-1;
+  }
+  body.home > main > .collection > .excerpt {
+    /* article-banner */
+  }
+  body.home > main > .collection > .excerpt > figure {
+    max-height: 9em;
+    padding: var(--fitz);
+  }
+  body.home > main > .collection > .excerpt > figure > img {
+    height: 100%;
+    object-position: center;
+  }
+  body.home > main > .collection > .excerpt > header {
+    padding: var(--fitz);
+    text-align: left;
+    display: block;
+  }
+  body.home > main > .collection > .excerpt > header > * {
+    text-align: left;
+    margin-left: 0;
+  }
+  body.home > main > .collection > .excerpt > .content {
+    text-align: left;
+    margin: 0;
+  }
+  body.home > main > .collection > .excerpt > .content .summary {
+    text-align: left;
+  }
+  body.home > main > .collection > .excerpt > .content .summary > ul {
+    list-style: disc;
+    text-align: left;
+    margin: 0;
+    margin-left: 1em;
+    padding: 0;
+  }
+  body.home > main > .collection > .excerpt > .content .summary > ul li::after {
+    display: none;
+  }
+  body.home > main > .collection > .excerpt > footer > aside {
+    padding: 0;
+  }
+  body.home > main > .collection > .excerpt > footer > aside > h1, body.home > main > .collection > .excerpt > footer > aside h2 {
+    display: none;
+  }
+  body.home > main > .collection > .excerpt > footer > nav {
+    padding: 0;
   }
 }
 
