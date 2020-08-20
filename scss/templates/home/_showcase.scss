@@ -1,11 +1,11 @@
-.showcase {
+> .showcase {
   // position: relative;
   display: grid;
-  grid-template-rows: " auto 1fr auto ";
   grid-template-areas:
       " showcase_header "
       " showcase_article "
       " showcase_footer ";
+  grid-template-rows:  auto 1fr auto ;
   
   > header {
     grid-area: showcase_header;

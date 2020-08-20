@@ -5,104 +5,99 @@ article.home {
   position: relative;
 }
 
-/* sections/home *****************************/
-.featured {
+/* templates/home *****************************/
+body.home > .showcase {
+  display: grid;
+  grid-template-areas: " showcase_header " " showcase_article " " showcase_footer ";
+  grid-template-rows: auto 1fr auto;
+}
+body.home > .showcase > header {
+  grid-area: showcase_header;
+}
+body.home > .showcase > article {
+  grid-area: showcase_article;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+body.home > .showcase > article.show {
+  opacity: 1;
+}
+body.home > .showcase > article > figure > figcaption {
+  display: none;
+}
+body.home > .showcase > article > footer .article-share,
+body.home > .showcase > article > footer .article-tags,
+body.home > .showcase > article > footer .sibling {
+  display: none;
+}
+body.home > .showcase > footer {
+  grid-area: showcase_footer;
+}
+body.home > .featured {
   padding: 0;
   margin: 0;
   overflow: auto;
 }
-.featured > * {
+body.home > .featured > * {
   margin: var(--fitz);
   padding: var(--fitz);
 }
-.featured > h1 {
+body.home > .featured > h1 {
   grid-column: 1/-1;
   letter-spacing: 0.25em;
   padding-left: 0.25em;
   text-align: center;
   text-transform: uppercase;
 }
-.featured > article {
+body.home > .featured > article {
   /* article-banner */
 }
-.featured > article > figure {
+body.home > .featured > article > figure {
   max-height: 9em;
   padding: var(--fitz);
 }
-.featured > article > figure > img {
+body.home > .featured > article > figure > img {
   height: 100%;
   object-position: center;
 }
-.featured > article > header {
+body.home > .featured > article > header {
   padding: var(--fitz);
   text-align: left;
   display: block;
 }
-.featured > article > header > * {
+body.home > .featured > article > header > * {
   text-align: left;
   margin-left: 0;
 }
-.featured > article > .content {
+body.home > .featured > article > .content {
   text-align: left;
   margin: 0;
 }
-.featured > article > .content .summary {
+body.home > .featured > article > .content .summary {
   text-align: left;
 }
-.featured > article > .content .summary > ul {
+body.home > .featured > article > .content .summary > ul {
   list-style: disc;
   text-align: left;
   margin: 0;
   margin-left: 1em;
   padding: 0;
 }
-.featured > article > .content .summary > ul li::after {
+body.home > .featured > article > .content .summary > ul li::after {
   display: none;
 }
-.featured > article > footer > aside {
+body.home > .featured > article > footer > aside {
   padding: 0;
 }
-.featured > article > footer > aside > h1, .featured > article > footer > aside h2 {
+body.home > .featured > article > footer > aside > h1, body.home > .featured > article > footer > aside h2 {
   display: none;
 }
-.featured > article > footer > nav {
+body.home > .featured > article > footer > nav {
   padding: 0;
 }
-
-/* sections/home *****************************/
-.showcase {
-  display: grid;
-  grid-template-rows: " auto 1fr auto ";
-  grid-template-areas: " showcase_header " " showcase_article " " showcase_footer ";
-}
-.showcase > header {
-  grid-area: showcase_header;
-}
-.showcase > article {
-  grid-area: showcase_article;
-  opacity: 0;
-  transition: opacity 0.5s;
-}
-.showcase > article.show {
-  opacity: 1;
-}
-.showcase > article > figure > figcaption {
-  display: none;
-}
-.showcase > article > footer .article-share,
-.showcase > article > footer .article-tags,
-.showcase > article > footer .sibling {
-  display: none;
-}
-.showcase > footer {
-  grid-area: showcase_footer;
-}
-
-/* templates/home *****************************/
 body.home > .showcase {
   margin: var(--fitz);
   padding: var(--fitz);
-  min-height: calc(100vh - var(--header-height) - (var(--fitz-2) * 3));
 }
 body.home > .featured {
   margin: var(--fitz);
@@ -112,11 +107,9 @@ body.home > .featured {
   body.home {
     display: grid;
     grid-template-areas: "  header   showcase " "  asides   featured " "  asides   main   " "  asides   footer   ";
-    grid-template-rows: calc(100vh - var(--fitz-2));
   }
   body.home > .showcase {
     grid-area: showcase;
-    height: calc(100vh - 2em);
   }
   body.home > .featured {
     grid-area: featured;
