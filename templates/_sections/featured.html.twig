@@ -1,7 +1,7 @@
 {% set options = { items: {'@taxonomy.photon': 'featured' }, 'limit': 5, 'order': {'by': 'date', 'dir': 'desc'} } %}
 {% set featured_collection = page.collection(options) %}
     <section class="featured">
-      <header></header>
+      <header><h1>Featured</h1></header>
 {% for article in featured_collection %}
 {%   include [
         "_articles/#{ article.template }-excerpt.html.twig",

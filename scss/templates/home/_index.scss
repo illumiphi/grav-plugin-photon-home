@@ -14,14 +14,12 @@ body.home {
     // min-height: calc(100vh - var(--header-height) - (var(--fitz-2) * 3));
   }
 
-
   > .featured {
     // @extend %body-section-default;
     // margin: var(--fitz);
     margin: var(--fitz);
     padding: var(--fitz);
   }
-
 
   @media (orientation: landscape) {
     display: grid;

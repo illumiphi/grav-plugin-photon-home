@@ -9,12 +9,25 @@
   
   > header {
     grid-area: showcase_header;
+    > h1 {
+      font-size: 1rem;
+    }
   }
+
 
   > article {
     grid-area: showcase_article;
     opacity: 0;
     transition: opacity .5s;
+
+    grid-template-areas: 
+        " header " 
+        " figure " 
+        " content " 
+        " data " 
+        " footer ";
+    grid-template-columns: auto;
+    grid-template-rows: min-content minmax(0, 10em) 1fr auto auto;
 
     &.show {
       opacity: 1;
@@ -34,6 +47,12 @@
       .article-tags,
       .sibling {
         display:none;
+      }
+    }
+
+    &.calendar {
+      > figure {
+        display: none;
       }
     }
   }

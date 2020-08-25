@@ -14,10 +14,16 @@ body.home > .showcase {
 body.home > .showcase > header {
   grid-area: showcase_header;
 }
+body.home > .showcase > header > h1 {
+  font-size: 1rem;
+}
 body.home > .showcase > article {
   grid-area: showcase_article;
   opacity: 0;
   transition: opacity 0.5s;
+  grid-template-areas: " header " " figure " " content " " data " " footer ";
+  grid-template-columns: auto;
+  grid-template-rows: min-content minmax(0, 10em) 1fr auto auto;
 }
 body.home > .showcase > article.show {
   opacity: 1;
@@ -28,6 +34,9 @@ body.home > .showcase > article > figure > figcaption {
 body.home > .showcase > article > footer .article-share,
 body.home > .showcase > article > footer .article-tags,
 body.home > .showcase > article > footer .sibling {
+  display: none;
+}
+body.home > .showcase > article.calendar > figure {
   display: none;
 }
 body.home > .showcase > footer {
@@ -42,7 +51,7 @@ body.home > .featured > * {
   margin: var(--fitz);
   padding: var(--fitz);
 }
-body.home > .featured > h1 {
+body.home > .featured > header > h1 {
   grid-column: 1/-1;
   letter-spacing: 0.25em;
   padding-left: 0.25em;

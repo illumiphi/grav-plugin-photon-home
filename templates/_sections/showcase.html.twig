@@ -1,7 +1,7 @@
 {% set options = { items: {'@taxonomy.photon': 'showcase' }, 'limit': 5, 'order': {'by': 'date', 'dir': 'desc'}, 'pagination': true } %}
 {% set showcase_collection = page.collection(options) %}
     <section class="showcase">
-      <header></header>
+      <header><h1>Showcase</h1></header>
 {% for article in showcase_collection %}
 {%   include [
         "_articles/#{ article.template }-showcase.html.twig",
