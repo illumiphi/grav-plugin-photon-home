@@ -1,10 +1,13 @@
 {% extends 'article.html.twig' %}
+{% set type = 'home' %}
 {% block template %}
 {{ parent() }}
-    <!-- user/themes/photon/templates/home.html.twig -->
+{% if config.system.debugger.enabled %}
+<!-- user/plugins/photon-{{ type }}/templates/{{ type }}.html.twig -->
+{% endif %}
 {% endblock template %}
 
-{% block body_template_classes %}{{ parent() }} home{% endblock body_template_classes %}
+{% block body_template_classes %}{{ parent() }} {{ type }}{% endblock body_template_classes %}
 
 {% block showcase %}
 {% include '_sections/showcase.html.twig'  %}
