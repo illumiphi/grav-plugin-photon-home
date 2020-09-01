@@ -79,24 +79,19 @@ class PhotonHomePlugin extends Plugin
       $twig = 			$this->grav['twig'];
       $assets = 		$this->grav['assets'];
 
+      // styles
+      $css = 'plugin://photon-home/assets/home.css';
+      $assets->addCss($css, 100, false, 'photon-plugins' );
+
       // only load the vars if this datatype page
-      // if ($page->template() == 'home')
-      // {
-
-        // styles
-        // if ($this->config->get('plugins.photon-home.built_in_css')) {
-          $css = 'plugin://photon-home/assets/home.css';
-          $assets->addCss($css, 100, false, 'photon-plugins' );
-        // }
-
+      if ($page->template() == 'home')
+      {
         // scripts
-        // if ($this->config->get('plugins.photon-home.built_in_js')) {
-          $js = 'plugin://photon-home/assets/home.js';
-          $assets->addJs($js, 100, false, 'defer', 'photon-plugins' );
-          $js = 'plugin://photon-home/assets/showcase.js';
-          $assets->addJs($js, 100, false, 'defer', 'photon-plugins' );
-        // }
-      // }
+        $js = 'plugin://photon-home/assets/home.js';
+        $assets->addJs($js, 100, false, 'defer', 'photon-plugins' );
+        $js = 'plugin://photon-home/assets/showcase.js';
+        $assets->addJs($js, 100, false, 'defer', 'photon-plugins' );
+      }
     }
 
 }
