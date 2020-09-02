@@ -5,6 +5,59 @@ article.home {
   position: relative;
 }
 
+article.showcase {
+  cursor: pointer;
+  transition: box-shadow 0.5s, background 0.5s;
+  height: 100%;
+}
+@supports (display: grid) {
+  article.showcase {
+    display: grid;
+    grid-template-areas: " header header " " figure collection " " content collection " " footer footer ";
+    grid-template-columns: auto 1fr;
+    grid-template-rows: min-content minmax(0, 10em) 1fr mincontent;
+  }
+}
+article.showcase > .collection {
+  grid-area: collection;
+  font-size: 0.9em;
+}
+article.showcase > .collection > article {
+  display: flex;
+  flex-flow: column nowrap;
+}
+article.showcase > .collection > article > .content {
+  display: none;
+}
+article.showcase > .collection > article > footer {
+  display: none;
+}
+article.showcase > figure {
+  grid-area: figure;
+  width: auto;
+  height: 100%;
+}
+article.showcase > figure > img {
+  object-fit: cover;
+}
+article.showcase > figure:empty {
+  display: none;
+}
+article.showcase > header {
+  grid-area: header;
+}
+article.showcase > .content {
+  grid-area: content;
+}
+article.showcase > footer {
+  grid-area: footer;
+}
+article.showcase .article-share {
+  display: none;
+}
+article.showcase:hover {
+  box-shadow: 0.5em 0.5em 0.7em rgba(0, 0, 0, 0.4);
+}
 /* templates/home *****************************/
 body.home > .showcase {
   display: grid;
@@ -21,9 +74,6 @@ body.home > .showcase > article {
   grid-area: showcase_article;
   opacity: 0;
   transition: opacity 0.5s;
-  grid-template-areas: " header " " figure " " content " " footer ";
-  grid-template-columns: auto;
-  grid-template-rows: min-content minmax(0, 10em) 1fr auto auto;
 }
 body.home > .showcase > article.show {
   opacity: 1;

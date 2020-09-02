@@ -9,17 +9,34 @@ article.showcase {
   @supports (display: grid) {
     display: grid;
     grid-template-areas:
-      ' figure  '
-      ' header '
-      ' content '
-      ' footer  ';
-    grid-template-columns: 1fr;
-    // grid-template-rows: 60vh;
+      ' header header '
+      ' figure collection '
+      ' content collection '
+      ' footer footer ';
+    grid-template-columns: auto 1fr;
+    grid-template-rows: min-content minmax(0, 10em) 1fr mincontent ;
   }
 
   > * {
   }
 
+  > .collection {
+    grid-area: collection;
+    font-size: .9em;
+
+    > article {
+      display: flex;
+      flex-flow: column nowrap;
+
+      > .content {
+        display: none;
+      }
+      > footer {
+        display: none;
+      }
+    }
+  }
+    
   > figure {
     grid-area: figure;
     width: auto;
@@ -40,13 +57,14 @@ article.showcase {
     }
   }
 
-  .content {
+  > .content {
     grid-area: content;
   }
   
-  footer {
+  > footer {
     grid-area: footer;
   }
+
   .article-share {
     display: none;
   }

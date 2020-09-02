@@ -20,13 +20,6 @@
     opacity: 0;
     transition: opacity .5s;
 
-    grid-template-areas: 
-        " header " 
-        " figure " 
-        " content " 
-        " footer ";
-    grid-template-columns: auto;
-    grid-template-rows: min-content minmax(0, 10em) 1fr auto auto;
 
     &.show {
       opacity: 1;
