@@ -7,16 +7,11 @@ form:
   fields:
     tabs:
       fields:
-        header.home:
+        home:
           type: tab
-          title: ✴ Home
-          icon: folder
-          text: Enter details for this Home
-
+          title: Home Collection
           fields:
-
-            .notes:
-              type: textarea
-              label: Notes
-              help: Notes about this Home
-              size: medium
+            header.content.items:
+              type: text
+              label: Collection
+              default: '@root.children'

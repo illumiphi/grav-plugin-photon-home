@@ -6,9 +6,7 @@ article.home {
 }
 
 article.showcase {
-  cursor: pointer;
   transition: box-shadow 0.5s, background 0.5s;
-  height: 100%;
 }
 @supports (display: grid) {
   article.showcase {
@@ -20,11 +18,20 @@ article.showcase {
 }
 article.showcase > .collection {
   grid-area: collection;
-  font-size: 0.9em;
+  font-size: 0.8em;
+}
+article.showcase > .collection > header {
+  display: flex;
+  justify-content: space-between;
+}
+article.showcase > .collection > header nav {
+  display: none;
 }
 article.showcase > .collection > article {
   display: flex;
   flex-flow: column nowrap;
+  margin: 0;
+  padding: 0;
 }
 article.showcase > .collection > article > .content {
   display: none;
@@ -55,9 +62,7 @@ article.showcase > footer {
 article.showcase .article-share {
   display: none;
 }
-article.showcase:hover {
-  box-shadow: 0.5em 0.5em 0.7em rgba(0, 0, 0, 0.4);
-}
+
 /* templates/home *****************************/
 body.home > .showcase {
   display: grid;
