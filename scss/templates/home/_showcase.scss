@@ -23,6 +23,7 @@
 
     &.show {
       opacity: 1;
+      z-index: 2;
     }
 
     > figure {

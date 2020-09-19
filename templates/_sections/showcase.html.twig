@@ -1,4 +1,8 @@
-{% set options = { items: {'@taxonomy.photon': 'showcase' }, 'limit': 5, 'order': {'by': 'date', 'dir': 'desc'}, 'pagination': true } %}
+{% set options = { 
+        'items': {'@taxonomy.photon': 'showcase' }, 
+        'limit': 5, 
+        'order': {'by': 'date', 'dir': 'desc'}, 
+      } %}
 {% set showcase_collection = page.collection(options) %}
     <section class="showcase">
       <header><h1>Showcase</h1></header>
