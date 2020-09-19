@@ -5,7 +5,7 @@
       " showcase_header "
       " showcase_article "
       " showcase_footer ";
-  grid-template-rows:  auto 1fr auto ;
+  grid-template-rows:  auto calc(100vh-10em) auto ;
   
   > header {
     grid-area: showcase_header;
@@ -19,7 +19,6 @@
     grid-area: showcase_article;
     opacity: 0;
     transition: opacity .5s;
-
 
     &.show {
       opacity: 1;
@@ -35,6 +34,9 @@
     > header {
     }
 
+    > .collection {
+      overflow: scroll;
+    }
     > footer {
       .article-share,
       .article-tags,
