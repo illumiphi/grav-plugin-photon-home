@@ -5,20 +5,21 @@
       " showcase_header "
       " showcase_article "
       " showcase_footer ";
-  grid-template-rows:  auto calc(100vh-10em) auto ;
-  
+  grid-template-rows:  3em calc(100vh - 9em) 3em ;
+
   > header {
     grid-area: showcase_header;
     > h1 {
       font-size: 1rem;
+      line-height: 1;
     }
   }
-
 
   > article {
     grid-area: showcase_article;
     opacity: 0;
     transition: opacity .5s;
+    padding: 0;
 
     &.show {
       opacity: 1;
@@ -26,6 +27,15 @@
     }
 
     > figure {
+      grid-row: 1 / -1;
+      grid-column: 1 / -1;
+      padding: 0;
+
+      > img {
+        max-height: none;
+        opacity: .2;
+      }
+
       > figcaption {
         display: none;
       }

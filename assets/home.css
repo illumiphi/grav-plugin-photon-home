@@ -67,22 +67,33 @@ article.showcase .article-share {
 body.home > .showcase {
   display: grid;
   grid-template-areas: " showcase_header " " showcase_article " " showcase_footer ";
-  grid-template-rows: auto calc(100vh-10em) auto;
+  grid-template-rows: 3em calc(100vh - 9em) 3em;
 }
 body.home > .showcase > header {
   grid-area: showcase_header;
 }
 body.home > .showcase > header > h1 {
   font-size: 1rem;
+  line-height: 1;
 }
 body.home > .showcase > article {
   grid-area: showcase_article;
   opacity: 0;
   transition: opacity 0.5s;
+  padding: 0;
 }
 body.home > .showcase > article.show {
   opacity: 1;
   z-index: 2;
+}
+body.home > .showcase > article > figure {
+  grid-row: 1/-1;
+  grid-column: 1/-1;
+  padding: 0;
+}
+body.home > .showcase > article > figure > img {
+  max-height: none;
+  opacity: 0.2;
 }
 body.home > .showcase > article > figure > figcaption {
   display: none;
