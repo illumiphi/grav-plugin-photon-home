@@ -1,7 +1,7 @@
         <article class="showcase {{ article.template }}" data-url="{{ article.url }}">
 {% include [
-        "_articles/_block/#{ article.template }_figure.html.twig",
-        "_articles/_block/article_figure.html.twig"
+        "_articles/_block/#{ article.template }_figure_showcase.html.twig",
+        "_articles/_block/article_figure_showcase.html.twig"
       ] with { 'article': article } %}
 {% include [
         "_articles/_block/#{ article.template }_header_showcase.html.twig",
