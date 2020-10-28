@@ -5,6 +5,12 @@ photon PLATFORM
 
 ## 0.1.0
 > Home page for photon
+- [configuration](#configuration)
+- [templates](#templates)
+- [scaffolds](#scaffolds)
+- [scss](#scss)
+- [assets](#assets)
+- [languages](#languages)
 
 # configuration
 blueprints.yaml
@@ -13,6 +19,13 @@ fields:
  - enabled
  - built_in_css
  - built_in_js
+
+Before configuring this plugin, you should copy the `user/plugins/photon-home/photon-home.yaml` to `user/config/plugins/photon-home.yaml` and only edit that copy.
+
+Here is the default configuration and an explanation of available options:
+
+Note that if you use the admin plugin, a file with your configuration, and named photon-home.yaml will be saved in the `user/config/plugins/` folder once the configuration is saved in the admin.
+
 
 # blueprints
 
@@ -48,6 +61,12 @@ templates
 ```
 The primary difference of the Home page from the parent Article page is the Showcase and Featured panels.
 
+# scaffolds
+
+```sh
+scaffolds [error opening dir]
+```
+
 # scss
 
 ```sh
@@ -79,14 +98,6 @@ assets
 languages
 └── en.yaml
 ```
-
-# scaffolds
-
-```sh
-scaffolds [error opening dir]
-```
-
-copyright &copy; 2020
 The MIT License (MIT)
 
 Copyright (c) 2019 illumiphi
@@ -118,15 +129,6 @@ SOFTWARE.
 
 ## Configuration
 
-Before configuring this plugin, you should copy the `user/plugins/photon-home/photon-home.yaml` to `user/config/plugins/photon-home.yaml` and only edit that copy.
-
-Here is the default configuration and an explanation of available options:
-
-```yaml
-enabled: true
-```
-
-Note that if you use the admin plugin, a file with your configuration, and named photon-home.yaml will be saved in the `user/config/plugins/` folder once the configuration is saved in the admin.
 
 ## Usage
 
@@ -138,3 +140,6 @@ Select template type when creating a new page
 ## To Do
 
 - [ ] Future plans, if any
+
+
+copyright &copy; 2020
