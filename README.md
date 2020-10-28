@@ -1,39 +1,101 @@
+photon PLATFORM
+
+
 # photon ✴ Home
-## DATATYPE plugin
 
-**This README.md file should be modified to describe the features, installation, configuration, and general usage of this plugin.**
+## 0.1.0
+> Home page for photon
 
-The **Home** Plugin is for [Grav CMS](http://github.com/getgrav/grav). Home page for photon
+# configuration
+blueprints.yaml
+
+fields:
+ - enabled
+ - built_in_css
+ - built_in_js
+
+# blueprints
+
+```sh
+blueprints
+└── home.yaml
+```
+
+- Home
+  home.yaml
+  extends: article
+  fields:
+  - home
+
+# templates
+
+```sh
+templates
+├── _articles
+│   ├── _block
+│   │   ├── article_figure_showcase.html.twig
+│   │   ├── article_footer_showcase.html.twig
+│   │   ├── article_header_showcase.html.twig
+│   │   └── article_main_showcase.html.twig
+│   ├── article-showcase.html.twig
+│   └── home.html.twig
+├── _sections
+│   ├── featured.html.twig
+│   └── showcase.html.twig
+├── home.html.twig
+└── home-orig.html.twig
+```
+
+# scss
+
+```sh
+scss
+├── articles
+│   ├── _article-showcase.scss
+│   └── _home.scss
+├── templates
+│   └── home
+│       ├── _featured.scss
+│       ├── _index.scss
+│       └── _showcase.scss
+└── home.scss
+```
+
+# assets
+
+```sh
+assets
+├── home.css
+├── home.css.map
+├── home.js
+└── showcase.js
+```
+
+# languages
+
+```sh
+languages
+└── en.yaml
+```
+
+# scaffolds
+
+```sh
+scaffolds [error opening dir]
+```
+
+copyright &copy; 2020
+
 
 ## Installation
 
-Installing the Home plugin can be done in one of two ways. The GPM (Grav Package Manager) installation method enables you to quickly and easily install the plugin with a simple terminal command, while the manual method enables you to do so via a zip file.
+- all photon plugins are installed as git submodules. More on that later.
 
-### GPM Installation (Preferred)
 
-The simplest way to install this plugin is via the [Grav Package Manager (GPM)](http://learn.getgrav.org/advanced/grav-gpm) through your system's terminal (also called the command line).  From the root of your Grav install type:
-
-    bin/gpm install home
-
-This will install the Home plugin into your `/user/plugins` directory within Grav. Its files can be found under `/your/site/grav/user/plugins/home`.
-
-### Manual Installation
-
-To install this plugin, just download the zip version of this repository and unzip it under `/your/site/grav/user/plugins`. Then, rename the folder to `home`. You can find these files on [GitHub](https://github.com/i-am-phi/grav-plugin-home) or via [GetGrav.org](http://getgrav.org/downloads/plugins#extras).
-
-You should now have all the plugin files under
-
-    /your/site/grav/user/plugins/home
-
-> NOTE: This plugin is a modular component for Grav which requires [Grav](http://github.com/getgrav/grav) and the [Error](https://github.com/getgrav/grav-plugin-error) and [Problems](https://github.com/getgrav/grav-plugin-problems) to operate.
-
-### Admin Plugin
-
-If you use the admin plugin, you can install directly through the admin plugin by browsing the `Plugins` tab and clicking on the `Add` button.
 
 ## Configuration
 
-Before configuring this plugin, you should copy the `user/plugins/home/home.yaml` to `user/config/plugins/home.yaml` and only edit that copy.
+Before configuring this plugin, you should copy the `user/plugins/photon-home/photon-home.yaml` to `user/config/plugins/photon-home.yaml` and only edit that copy.
 
 Here is the default configuration and an explanation of available options:
 
@@ -41,15 +103,14 @@ Here is the default configuration and an explanation of available options:
 enabled: true
 ```
 
-Note that if you use the admin plugin, a file with your configuration, and named home.yaml will be saved in the `user/config/plugins/` folder once the configuration is saved in the admin.
+Note that if you use the admin plugin, a file with your configuration, and named photon-home.yaml will be saved in the `user/config/plugins/` folder once the configuration is saved in the admin.
 
 ## Usage
 
-**Describe how to use the plugin.**
+Select template type when creating a new page
 
 ## Credits
 
-**Did you incorporate third-party code? Want to thank somebody?**
 
 ## To Do
 
