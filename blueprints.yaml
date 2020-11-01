@@ -1,15 +1,14 @@
 name: photon ✴ Home
 version: 0.1.0
 description: Home page for photon
-icon: asterisk
 author:
   name: illumiphi
   email: phi@illumiphi.com
-homepage: https://github.com/i-am-phi/grav-plugin-photon-home
-demo: https://illumiphi.com
-keywords: datatype, photon
-bugs: https://github.com/i-am-phi/grav-plugin-photon-home/issues
+homepage: https://github.com/photon-platform/grav-plugin-photon-home
 docs: https://github.com/i-am-phi/grav-plugin-photon-home/blob/develop/README.md
+bugs: https://github.com/i-am-phi/grav-plugin-photon-home/issues
+keywords: datatype, photon
+icon: asterisk
 license: MIT
 
 dependencies:

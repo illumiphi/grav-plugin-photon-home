@@ -1,10 +1,17 @@
-photon PLATFORM
+<a href="https://photon-platform.net/">
+    <img src="https://photon-platform.net/user/images/photon-logo-banner.png" alt="photon" title="photon" align="right" height="120" />
+</a>
 
 
 # photon ✴ Home
 
 ## 0.1.0
+
+---
+
+
 > Home page for photon
+
 - [configuration](#configuration)
 - [templates](#templates)
 - [scaffolds](#scaffolds)
@@ -16,16 +23,38 @@ photon PLATFORM
 blueprints.yaml
 
 fields:
- - enabled
- - built_in_css
- - built_in_js
+- enabled
+- built_in_css
+- built_in_js
 
 Before configuring this plugin, you should copy the `user/plugins/photon-home/photon-home.yaml` to `user/config/plugins/photon-home.yaml` and only edit that copy.
 
 Here is the default configuration and an explanation of available options:
 
+```
+enabled: true
+built_in_css: true
+built_in_js: true
+
+description: Custom Text added by the **photon-home** plugin (disable plugin to remove)
+```
+
 Note that if you use the admin plugin, a file with your configuration, and named photon-home.yaml will be saved in the `user/config/plugins/` folder once the configuration is saved in the admin.
 
+
+# blueprints
+
+```sh
+blueprints
+└── home.yaml
+```
+
+### Home
+home.yaml
+extends: article
+fields:
+- home
+  - header.content.items
 
 # templates
 
