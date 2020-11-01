@@ -2,10 +2,10 @@ name: photon ✴ Home
 version: 0.1.0
 description: Home page for photon
 author:
-  name: illumiphi
-  email: phi@illumiphi.com
+  name: phi ARCHITECT
+  email: phi@photon-platform.net
 homepage: https://github.com/photon-platform/grav-plugin-photon-home
-docs: https://github.com/i-am-phi/grav-plugin-photon-home/blob/develop/README.md
+docs: https://photon-platform.github.io/grav-plugin-photon-home/
 bugs: https://github.com/i-am-phi/grav-plugin-photon-home/issues
 keywords: datatype, photon
 icon: asterisk
