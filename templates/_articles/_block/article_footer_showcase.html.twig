@@ -4,7 +4,11 @@
 {% include '_articles/_block/article_footer/aside_categories.html.twig' %}
 {% include '_articles/_block/article_footer/aside_tags.html.twig' %}
           <nav class="more">
+{% if article.template == "home"  %}
+            <a  href="{{ article.url }}#main">More ></a>
+{% else %}
             <a  href="{{ article.url }}">More ></a>
+{% endif %}
           </nav>
 {% include '_articles/_block/article_footer/aside_share.html.twig' %}
         </footer>
